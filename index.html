@@ -900,7 +900,17 @@
         </button>
 
         <div class="sise-upload-alert" id="uploadAlert">
-          <strong>Importante:</strong> Este es el archivo que debes subir en esta misma tarea para ser calificado. Verifica que el PDF se haya descargado correctamente y consérvalo también, ya que lo utilizarás en la siguiente actividad.
+          <strong>Importante:</strong> Este es el archivo que debes subir en esta misma tarea para ser calificado. Verifica que el PDF se haya descargado correctamente y consérvalo también, ya que lo utilizarás en la siguiente actividad. Recuerda subirlo antes de continuar, ya que de lo contrario no podrás avanzar con el siguiente recurso.
+
+          <div style="margin-top:16px;">
+            <a
+              class="sise-btn sise-btn-primary"
+              href="https://aulad.educad.pe/courses/535/discussion_topics/884?module_item_id=5926"
+              target="_top"
+              aria-label="Continuar con el curso">
+              Continuar con el curso →
+            </a>
+          </div>
         </div>
 
         
@@ -983,7 +993,14 @@
     document.getElementById("progressFill").style.width =
       ((currentStep / totalSteps) * 100) + "%";
 
-    window.scrollTo({top:0,behavior:"smooth"});
+    var progressWrap = document.querySelector(".sise-progress-wrap");
+
+    if(progressWrap){
+      progressWrap.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+    }
   }
 
   window.nextStep = function(){
